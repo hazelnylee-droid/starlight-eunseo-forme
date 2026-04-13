@@ -1,0 +1,471 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500&family=Noto+Serif+KR:wght@600;700&family=Sora:wght@200;300;400&family=Stylish&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+html{background:#0e0e12!important}
+body{background:#0e0e12!important;color:#e8e6e1;font-family:'Noto Sans KR',sans-serif;font-weight:400;font-size:15px;line-height:1.85;padding:40px 24px;max-width:680px;margin:0 auto}
+@keyframes tw1{0%,100%{opacity:.12}50%{opacity:.7}}
+@keyframes tw2{0%,100%{opacity:.08}50%{opacity:.6}}
+@keyframes tw3{0%,100%{opacity:.15}50%{opacity:.8}}
+@keyframes tw4{0%,100%{opacity:.05}50%{opacity:.5}}
+@keyframes tw5{0%,100%{opacity:.1}50%{opacity:.65}}
+@keyframes tw6{0%,100%{opacity:.18}50%{opacity:.75}}
+.s1{animation:tw1 3s ease-in-out infinite}.s2{animation:tw2 4.2s ease-in-out infinite}.s3{animation:tw3 2.5s ease-in-out infinite}.s4{animation:tw4 5s ease-in-out infinite}.s5{animation:tw5 3.8s ease-in-out infinite}.s6{animation:tw6 2.8s ease-in-out infinite}
+.chapter-title{font-family:'Noto Serif KR',serif;font-weight:700;font-size:22px;color:#e8e6e1;margin-bottom:6px}
+.chapter-sub{font-family:'Noto Serif KR',serif;font-weight:600;font-size:13px;color:#c9a84c;letter-spacing:3px;margin-bottom:32px}
+.section-title{font-family:'Noto Serif KR',serif;font-weight:600;font-size:17px;color:#e8e6e1;margin-bottom:16px;margin-top:40px}
+.body-text{color:#e8e6e1;font-size:15px;line-height:1.85;margin-bottom:20px;text-align:justify;word-break:keep-all}
+.muted{color:#9a978f}
+.label{font-family:'Sora',sans-serif;font-weight:300;font-size:11px;color:#9a978f;letter-spacing:4px;text-transform:uppercase}
+.divider{height:1px;background:linear-gradient(90deg,transparent,#c9a84c33,transparent);margin:48px 0}
+.divider-gold{height:1px;background:linear-gradient(90deg,transparent,#c9a84c33,transparent);margin:32px 0}
+.box{border-radius:8px;padding:20px 24px;margin:24px 0}
+.box-label{font-family:'Sora',sans-serif;font-weight:400;font-size:11px;letter-spacing:2px;margin-bottom:10px;display:block}
+.box p{font-size:14px;line-height:1.8}
+.box-fate{background:#6b8aff0d;border-left:2px solid #6b8aff}.box-fate .box-label{color:#6b8aff}.box-fate p{color:#c8d0f0}
+.box-money{background:#5cc9a70d;border-left:2px solid #5cc9a7}.box-money .box-label{color:#5cc9a7}.box-money p{color:#c0e8d8}
+.box-warn{background:#f0a0500d;border-left:2px solid #f0a050}.box-warn .box-label{color:#f0a050}.box-warn p{color:#e8d8c0}
+.box-rose{background:#e8839a0d;border-left:2px solid #e8839a}.box-rose .box-label{color:#e8839a}.box-rose p{color:#f0d0d8}
+.card-pattern{background:#1c1c26;border-radius:8px;padding:20px 24px;margin:24px 0;border:1px solid #ffffff08}
+.card-pattern .card-icon{font-size:14px;color:#9a978f;margin-bottom:8px;display:block}
+.card-pattern .card-title{font-family:'Noto Serif KR',serif;font-weight:600;font-size:14px;color:#e8e6e1;margin-bottom:10px}
+.card-pattern p{font-size:14px;line-height:1.8;color:#c8c4bc}
+.card-strength{background:#1c1c26;border-radius:8px;padding:20px 24px;margin:16px 0;border:1px solid #ffffff08;display:flex;gap:16px;align-items:flex-start}
+.card-strength .strength-num{font-family:'Sora',sans-serif;font-weight:200;font-size:28px;color:#c9a84c;line-height:1;min-width:32px}
+.card-strength .strength-body{flex:1}
+.card-strength .strength-title{font-family:'Noto Serif KR',serif;font-weight:600;font-size:14px;color:#e8e6e1;margin-bottom:6px}
+.card-strength p{font-size:13px;line-height:1.7;color:#c8c4bc}
+.closing-box{background:linear-gradient(135deg,#1c1c26,#1a1520);border:1px solid #c9a84c20;border-radius:10px;padding:32px 28px;margin:48px 0;text-align:center}
+.closing-box p{font-size:14.5px;font-weight:300;color:#e8e6e1;line-height:2;margin-bottom:14px;text-align:center;word-break:keep-all}
+.closing-box .end-mark{font-family:'Stylish',serif;font-size:15px;color:#c9a84c;margin-top:16px;margin-bottom:0}
+[id^="ch"]{scroll-margin-top:40px}
+
+@media(max-width:680px){
+body{padding:20px 14px;font-size:14.5px}
+.chapter-title{font-size:19px}
+.chapter-sub{font-size:11px;margin-bottom:24px}
+.section-title{font-size:15px;margin-top:28px;margin-bottom:12px}
+.body-text{font-size:14px;line-height:1.8;margin-bottom:16px}
+.box{padding:16px 16px;margin:18px 0}
+.box p{font-size:13px;line-height:1.75}
+.card-pattern{padding:16px 16px;margin:18px 0}
+.card-pattern .card-title{font-size:13px}
+.card-pattern p{font-size:13px;line-height:1.7}
+.card-strength{padding:16px 14px;margin:12px 0;gap:12px}
+.card-strength .strength-num{font-size:24px;min-width:28px}
+.card-strength .strength-title{font-size:13px}
+.card-strength p{font-size:12.5px}
+.divider{margin:32px 0}
+.divider-gold{margin:24px 0}
+.closing-box{padding:24px 18px;margin:32px 0}
+.closing-box p{font-size:13.5px;line-height:1.85}
+.label{font-size:10px}
+.timeline-item{margin-bottom:16px}
+}
+@media(max-width:400px){
+body{padding:16px 10px;font-size:14px}
+.chapter-title{font-size:17px}
+.box{padding:14px 12px}
+.card-pattern{padding:14px 12px}
+.card-strength{padding:14px 12px}
+}
+</style>
+
+<!-- COVER -->
+<div style="min-height:100vh;display:flex;align-items:center;justify-content:center;margin:-40px -24px 0;padding:40px 24px;">
+<svg viewBox="0 0 680 580" style="width:100%;max-width:680px;" preserveAspectRatio="xMidYMid meet">
+<rect width="680" height="480" fill="#0e0e12"/>
+<circle cx="25" cy="18" r=".7" fill="#e8e6e1" class="s1"/><circle cx="112" cy="15" r=".6" fill="#e8e6e1" class="s3"/><circle cx="245" cy="48" r=".5" fill="#e8e6e1" class="s6"/><circle cx="380" cy="12" r=".8" fill="#e8e6e1" class="s4"/><circle cx="510" cy="45" r=".9" fill="#e8e6e1" class="s2"/><circle cx="642" cy="28" r=".8" fill="#e8e6e1" class="s5"/><circle cx="88" cy="38" r="1.3" fill="#f0e8d8" class="s1"/><circle cx="588" cy="35" r="1.2" fill="#f0e8d8" class="s3"/>
+<circle cx="18" cy="85" r=".6" fill="#e8e6e1" class="s2"/><circle cx="660" cy="90" r=".7" fill="#e8e6e1" class="s5"/><circle cx="55" cy="250" r=".7" fill="#e8e6e1" class="s4"/><circle cx="628" cy="260" r=".5" fill="#e8e6e1" class="s6"/>
+
+<!-- extra twinkling stars -->
+<circle cx="432" cy="24" r="0.6" fill="#e8e6e1" class="s2"/><circle cx="102" cy="67" r="0.8" fill="#e8e6e1" class="s5"/><circle cx="67" cy="246" r="0.4" fill="#e8e6e1" class="s2"/><circle cx="164" cy="347" r="0.7" fill="#e8e6e1" class="s6"/><circle cx="439" cy="315" r="0.5" fill="#e8e6e1" class="s5"/><circle cx="194" cy="497" r="0.9" fill="#e8e6e1" class="s2"/><circle cx="471" cy="201" r="0.5" fill="#e8e6e1" class="s3"/><circle cx="77" cy="223" r="0.6" fill="#e8e6e1" class="s3"/><circle cx="408" cy="462" r="0.8" fill="#e8e6e1" class="s5"/><circle cx="92" cy="526" r="0.4" fill="#e8e6e1" class="s3"/><circle cx="557" cy="356" r="0.9" fill="#e8e6e1" class="s5"/><circle cx="137" cy="49" r="0.8" fill="#e8e6e1" class="s3"/><circle cx="660" cy="489" r="0.9" fill="#e8e6e1" class="s4"/><circle cx="193" cy="366" r="0.6" fill="#e8e6e1" class="s3"/><circle cx="244" cy="385" r="0.8" fill="#e8e6e1" class="s6"/><circle cx="438" cy="351" r="0.5" fill="#e8e6e1" class="s6"/><circle cx="172" cy="269" r="0.6" fill="#e8e6e1" class="s6"/><circle cx="464" cy="133" r="0.6" fill="#e8e6e1" class="s1"/><circle cx="161" cy="28" r="0.6" fill="#e8e6e1" class="s3"/><circle cx="54" cy="521" r="0.7" fill="#e8e6e1" class="s6"/><circle cx="218" cy="377" r="0.6" fill="#e8e6e1" class="s6"/><circle cx="313" cy="158" r="0.5" fill="#e8e6e1" class="s5"/><circle cx="366" cy="428" r="0.7" fill="#e8e6e1" class="s5"/><circle cx="274" cy="133" r="1.0" fill="#e8e6e1" class="s5"/><circle cx="336" cy="433" r="0.9" fill="#e8e6e1" class="s2"/><circle cx="424" cy="454" r="0.7" fill="#e8e6e1" class="s1"/><circle cx="264" cy="344" r="0.7" fill="#e8e6e1" class="s3"/><circle cx="651" cy="492" r="0.4" fill="#e8e6e1" class="s6"/><circle cx="86" cy="505" r="0.9" fill="#e8e6e1" class="s6"/><circle cx="235" cy="174" r="0.5" fill="#e8e6e1" class="s1"/><circle cx="640" cy="500" r="0.6" fill="#e8e6e1" class="s5"/><circle cx="513" cy="294" r="0.5" fill="#e8e6e1" class="s6"/><circle cx="207" cy="368" r="0.8" fill="#e8e6e1" class="s2"/><circle cx="257" cy="100" r="1.0" fill="#e8e6e1" class="s5"/><circle cx="616" cy="345" r="0.7" fill="#e8e6e1" class="s1"/><circle cx="623" cy="502" r="0.9" fill="#e8e6e1" class="s3"/><circle cx="168" cy="145" r="0.7" fill="#e8e6e1" class="s1"/><circle cx="67" cy="282" r="0.4" fill="#e8e6e1" class="s5"/><circle cx="515" cy="82" r="0.7" fill="#e8e6e1" class="s5"/><circle cx="119" cy="305" r="0.8" fill="#e8e6e1" class="s2"/><circle cx="623" cy="433" r="0.8" fill="#e8e6e1" class="s6"/><circle cx="216" cy="567" r="0.8" fill="#e8e6e1" class="s4"/><circle cx="604" cy="263" r="0.5" fill="#e8e6e1" class="s1"/><circle cx="233" cy="339" r="0.5" fill="#e8e6e1" class="s2"/><circle cx="15" cy="406" r="0.4" fill="#e8e6e1" class="s1"/><circle cx="599" cy="484" r="0.4" fill="#c9a84c" class="s2" opacity=".5"/><circle cx="198" cy="282" r="0.7" fill="#c9a84c" class="s6" opacity=".5"/><circle cx="619" cy="328" r="0.6" fill="#c9a84c" class="s4" opacity=".5"/><circle cx="537" cy="123" r="0.4" fill="#c9a84c" class="s4" opacity=".5"/><circle cx="247" cy="242" r="0.8" fill="#c9a84c" class="s1" opacity=".5"/><circle cx="451" cy="551" r="0.4" fill="#c9a84c" class="s4" opacity=".5"/><circle cx="486" cy="452" r="0.5" fill="#c9a84c" class="s2" opacity=".5"/><circle cx="142" cy="262" r="0.6" fill="#c9a84c" class="s3" opacity=".5"/><circle cx="316" cy="492" r="0.4" fill="#c9a84c" class="s5" opacity=".5"/><circle cx="83" cy="372" r="0.7" fill="#c9a84c" class="s1" opacity=".5"/><circle cx="640" cy="520" r="0.8" fill="#c9a84c" class="s2" opacity=".5"/><circle cx="280" cy="280" r="0.8" fill="#c9a84c" class="s1" opacity=".5"/><circle cx="132" cy="31" r="1.2" fill="#f0e8d8" class="s4"/><circle cx="207" cy="392" r="1.4" fill="#f0e8d8" class="s5"/><circle cx="440" cy="283" r="1.1" fill="#f0e8d8" class="s2"/><circle cx="631" cy="331" r="1.3" fill="#f0e8d8" class="s6"/><circle cx="224" cy="56" r="1.2" fill="#f0e8d8" class="s5"/><circle cx="128" cy="530" r="1.0" fill="#f0e8d8" class="s2"/><circle cx="72" cy="65" r="1.4" fill="#f0e8d8" class="s4"/><circle cx="104" cy="493" r="1.1" fill="#f0e8d8" class="s5"/>
+<!-- luminary star (은서) -->
+<defs>
+<radialGradient id="sg" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#e8e2d6" stop-opacity=".15"/><stop offset="30%" stop-color="#e8e2d6" stop-opacity=".08"/><stop offset="60%" stop-color="#e8e2d6" stop-opacity=".03"/><stop offset="100%" stop-color="#e8e2d6" stop-opacity="0"/></radialGradient>
+<filter id="glow"><feGaussianBlur stdDeviation="2.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<!-- glow -->
+<circle cx="340" cy="65" r="70" fill="url(#sg)"/>
+<circle cx="340" cy="65" r="42" fill="url(#sg)"/>
+<!-- cross rays -->
+<line x1="300" y1="65" x2="380" y2="65" stroke="#e8e6e1" stroke-width=".5" opacity=".15"/>
+<line x1="340" y1="25" x2="340" y2="105" stroke="#e8e6e1" stroke-width=".4" opacity=".12"/>
+<line x1="312" y1="37" x2="368" y2="93" stroke="#e8e6e1" stroke-width=".25" opacity=".06"/>
+<line x1="368" y1="37" x2="312" y2="93" stroke="#e8e6e1" stroke-width=".25" opacity=".06"/>
+<!-- star body -->
+<polygon points="340,40 345,55 361,55 349,64 353,79 340,71 327,79 331,64 319,55 335,55" fill="#e8e6e1" opacity=".9" filter="url(#glow)"/>
+<circle cx="340" cy="62" r="3" fill="#fff" opacity=".8"/>
+<circle cx="340" cy="62" r="1.5" fill="#fff" opacity=".55"/>
+
+
+<text x="340" y="175" text-anchor="middle" font-family="'Sora',sans-serif" font-weight="200" font-size="11" fill="#9a978f" letter-spacing="6">NODE 8 ATLAS LABS</text>
+<text x="340" y="220" text-anchor="middle" font-family="'Stylish',serif" font-size="36" fill="#e8e6e1" letter-spacing="3">별빛 리포트</text>
+<text x="340" y="250" text-anchor="middle" font-family="'Sora',sans-serif" font-weight="300" font-size="10" fill="#c9a84c" letter-spacing="4">FOR ME</text>
+<line x1="280" y1="280" x2="400" y2="280" stroke="#c9a84c" stroke-width=".4" opacity=".25"/>
+<!-- Pisces constellation (above name) -->
+<g opacity=".65">
+<circle cx="270" cy="330" r="2.2" fill="#e8e6e1" class="s1"/>
+<circle cx="292" cy="342" r="1.8" fill="#e8e6e1" class="s3"/>
+<circle cx="318" cy="352" r="1.5" fill="#e8e6e1" class="s5"/>
+<circle cx="342" cy="358" r="1.4" fill="#e8e6e1" class="s2"/>
+<circle cx="330" cy="340" r="1.6" fill="#e8e6e1" class="s4"/>
+<circle cx="365" cy="348" r="2.0" fill="#e8e6e1" class="s6"/>
+<circle cx="305" cy="332" r="1.3" fill="#e8e6e1" class="s1"/>
+<line x1="270" y1="330" x2="292" y2="342" stroke="#e8e6e1" stroke-width=".4" opacity=".3"/>
+<line x1="292" y1="342" x2="318" y2="352" stroke="#e8e6e1" stroke-width=".4" opacity=".3"/>
+<line x1="318" y1="352" x2="342" y2="358" stroke="#e8e6e1" stroke-width=".4" opacity=".3"/>
+<line x1="342" y1="358" x2="365" y2="348" stroke="#e8e6e1" stroke-width=".4" opacity=".3"/>
+<line x1="318" y1="352" x2="330" y2="340" stroke="#e8e6e1" stroke-width=".4" opacity=".3"/>
+<line x1="330" y1="340" x2="305" y2="332" stroke="#e8e6e1" stroke-width=".4" opacity=".3"/>
+<line x1="305" y1="332" x2="270" y2="330" stroke="#e8e6e1" stroke-width=".4" opacity=".3"/>
+</g>
+<text x="320" y="385" text-anchor="middle" font-family="'Sora',sans-serif" font-weight="300" font-size="8" fill="#9a978f" letter-spacing="2" opacity=".45">PISCES</text>
+
+<text x="340" y="420" text-anchor="middle" font-family="'Noto Serif KR',serif" font-weight="600" font-size="22" fill="#e8e6e1" letter-spacing="10">김 은 서</text>
+
+<text x="340" y="480" text-anchor="middle" font-family="'Stylish',serif" font-size="14" fill="#9a978f" font-style="italic">"모든 별은 자기만의 빛이 있어"</text>
+</svg>
+</div>
+
+<!-- TOC -->
+<div style="min-height:80vh;display:flex;align-items:center;justify-content:center;margin:0 -24px;padding:40px 24px;">
+<div style="width:100%;max-width:420px;">
+<p style="font-family:'Sora',sans-serif;font-weight:200;font-size:11px;color:#9a978f;letter-spacing:6px;margin-bottom:48px;text-align:center;">CHAPTERS</p>
+<div style="display:flex;flex-direction:column;gap:28px;align-items:center;">
+<a href="#ch01" style="text-decoration:none;text-align:center;display:flex;flex-direction:column;align-items:center;"><svg width="20" height="20" viewBox="0 0 20 20" style="margin-bottom:6px;"><polygon points="10,2 12,7.5 18,7.5 13,11.5 15,17 10,13.5 5,17 7,11.5 2,7.5 8,7.5" fill="#e8e6e1" opacity=".7" class="s1"/></svg><div style="font-family:'Noto Serif KR',serif;font-weight:600;font-size:15px;color:#e8e6e1;">1. 나는 어떤 사람인가</div></a>
+<a href="#ch02" style="text-decoration:none;text-align:center;display:flex;flex-direction:column;align-items:center;"><svg width="20" height="20" viewBox="0 0 20 20" style="margin-bottom:6px;"><polygon points="10,2 12,7.5 18,7.5 13,11.5 15,17 10,13.5 5,17 7,11.5 2,7.5 8,7.5" fill="#e8e6e1" opacity=".7" class="s3"/></svg><div style="font-family:'Noto Serif KR',serif;font-weight:600;font-size:15px;color:#e8e6e1;">2. 엄마는 어떤 사람인가</div></a>
+<a href="#ch03" style="text-decoration:none;text-align:center;display:flex;flex-direction:column;align-items:center;"><svg width="20" height="20" viewBox="0 0 20 20" style="margin-bottom:6px;"><polygon points="10,2 12,7.5 18,7.5 13,11.5 15,17 10,13.5 5,17 7,11.5 2,7.5 8,7.5" fill="#e8e6e1" opacity=".7" class="s5"/></svg><div style="font-family:'Noto Serif KR',serif;font-weight:600;font-size:15px;color:#e8e6e1;">3. 우리가 자꾸 부딪히는 이유</div></a>
+<a href="#ch04" style="text-decoration:none;text-align:center;display:flex;flex-direction:column;align-items:center;"><svg width="20" height="20" viewBox="0 0 20 20" style="margin-bottom:6px;"><polygon points="10,2 12,7.5 18,7.5 13,11.5 15,17 10,13.5 5,17 7,11.5 2,7.5 8,7.5" fill="#e8e6e1" opacity=".7" class="s2"/></svg><div style="font-family:'Noto Serif KR',serif;font-weight:600;font-size:15px;color:#e8e6e1;">4. 내 마음을 전달하는 방법</div></a>
+<a href="#ch05" style="text-decoration:none;text-align:center;display:flex;flex-direction:column;align-items:center;"><svg width="20" height="20" viewBox="0 0 20 20" style="margin-bottom:6px;"><polygon points="10,2 12,7.5 18,7.5 13,11.5 15,17 10,13.5 5,17 7,11.5 2,7.5 8,7.5" fill="#e8e6e1" opacity=".7" class="s6"/></svg><div style="font-family:'Noto Serif KR',serif;font-weight:600;font-size:15px;color:#e8e6e1;">5. 내가 바꿀 수 있는 것과 없는 것</div></a>
+<a href="#ch06" style="text-decoration:none;text-align:center;display:flex;flex-direction:column;align-items:center;"><svg width="20" height="20" viewBox="0 0 20 20" style="margin-bottom:6px;"><polygon points="10,2 12,7.5 18,7.5 13,11.5 15,17 10,13.5 5,17 7,11.5 2,7.5 8,7.5" fill="#e8e6e1" opacity=".7" class="s4"/></svg><div style="font-family:'Noto Serif KR',serif;font-weight:600;font-size:15px;color:#e8e6e1;">6. 이 관계가 나에게 주는 것</div></a>
+</div></div></div>
+<div class="divider"></div>
+<!-- CH01 · 나는 어떤 사람인가 -->
+<div id="ch01">
+<p class="label" style="margin-bottom:8px;">Chapter 01</p>
+<div class="chapter-title">나는 어떤 사람인가</div>
+<div class="chapter-sub">내가 세상을 느끼는 방식</div>
+
+<p class="body-text">너는 감정이 색처럼 번지는 사람이야. 슬플 때 슬프기만 한 게 아니라, 슬프면서 동시에 신경 쓰이고, 화나면서 동시에 미안하고, 기쁘면서 동시에 불안하고. 한 가지 감정만 딱 느끼는 게 아니라 여러 색이 섞인 채로 한꺼번에 밀려와. "기분이 어때?" 물어보면 "몰라"라고 하는 건 진짜 몰라서야. 아직 정리가 안 된 거지, 느끼지 못하는 게 아니야.</p>
+
+<p class="body-text">그리고 너는 분위기에 예민한 사람이야. 방에 들어가기만 해도 그 방의 온도를 느껴. 사람들이 웃고 있어도 누가 진짜 웃는지, 누가 억지로 웃는지 알아. 이건 너의 엄청난 능력인데, 동시에 피곤한 이유이기도 해 — 자기도 모르게 주변 사람들의 감정을 흡수하거든.</p>
+
+<div class="box box-fate">
+<span class="box-label">너는 이런 사람이야</span>
+<p>• 여러 감정을 동시에 느끼는 사람 — 이건 약점이 아니라 넓은 감각이야<br>• 분위기를 읽는 사람 — 방에 들어가기만 해도 온도를 느껴<br>• 조화를 원하는 사람 — 갈등이 있으면 자기 탓인 것 같고, 평화로우면 안정돼<br>• 아름다운 것에 에너지를 받는 사람 — 예쁜 공간, 좋은 음악, 정돈된 방이 너를 충전시켜</p>
+</div>
+
+<div class="section-title">내가 기분 좋을 때</div>
+
+<div class="box box-money">
+<span class="box-label">에너지가 올라가는 순간</span>
+<p>• 집이 평화로울 때 — 아무도 안 싸우고, 긴장 없이 조용한 집<br>• 엄마가 편안한 얼굴로 옆에 있을 때 — 뭔가 해주지 않아도, 그냥 같이 있는 것<br>• 뭔가를 예쁘게 만들었을 때 — 노트 꾸미기, 방 정리, 그림 그리기<br>• 직감이 맞았을 때 — "내가 느낀 게 진짜였어"<br>• 힘든 친구 옆에 있어줬더니 고마워할 때</p>
+</div>
+
+<div class="section-title">내가 힘들어지는 순간</div>
+
+<div class="box box-warn">
+<span class="box-label">에너지가 빠지는 순간</span>
+<p>• 엄마가 나한테 실망한 것 같을 때 — 다른 건 견딜 수 있는데 이건 바닥이 꺼지는 느낌<br>• 누군가 앞에서 지적당할 때<br>• 친구들이 싸우는 데 끼었을 때 — 양쪽 다 이해되는데 어느 편도 못 듦<br>• 노력했는데 결과가 안 나올 때 — "내가 쓸모없나?" 하는 생각이 자동으로 올라옴<br>• 엄마가 조용할 때 — 생각하는 중인 건데, 나한테는 심판받는 느낌</p>
+</div>
+
+<div class="section-title">내가 생각하는 방식</div>
+
+<p class="body-text">너는 숲을 먼저 보는 타입이야. 나무 하나하나보다 전체 그림을 먼저 잡고, 느낌으로 이해한 다음에 세부를 나중에 채워. 수학도 공식 외우기보다 "이 공식이 왜 이런 모양이야?"가 먼저 궁금하지. 그리고 말하면서 생각을 정리하는 편이야 — 누군가한테 설명하듯 말하다 보면 "아, 내가 이렇게 생각하고 있었구나" 하고 알게 돼.</p>
+
+<div class="box box-fate">
+<span class="box-label">이건 알아두면 좋아</span>
+<p>너가 숙제 하다가 갑자기 딴 이야기를 하는 건 산만한 게 아니야. 너 머릿속에서는 그 두 개가 연결되어 있어. 다만 그 연결 고리가 다른 사람한테는 안 보이는 거야. 그리고 "아직 모르겠어"라고 말하는 건 게으른 게 아니야 — 너는 느낌이 먼저 오고, 그걸 말로 바꾸는 데 시간이 좀 걸리는 사람이야.</p>
+</div>
+
+<div class="divider-gold"></div>
+
+<div class="section-title">내가 빛나는 순간</div>
+
+<div class="card-strength">
+<div class="strength-num"><span style="font-size:11px;display:block;margin-bottom:2px;opacity:.6;">재능</span>01</div>
+<div class="strength-body"><div class="strength-title">스며드는 공감</div>
+<p>친구가 슬플 때 "왜 슬퍼?"가 아니라 같이 슬퍼지지. 그 슬픔의 결을 정확히 느끼는 거야. 이건 배워서 되는 게 아니야. 너한테 원래 있는 능력이야.</p>
+</div></div>
+
+<div class="card-strength">
+<div class="strength-num"><span style="font-size:11px;display:block;margin-bottom:2px;opacity:.6;">재능</span>02</div>
+<div class="strength-body"><div class="strength-title">공간을 읽는 눈</div>
+<p>색 배합이 어색하면 몸이 불편하고, 공간이 잘 정돈되면 마음이 풀리지. 너의 미적 감각은 어릴 때부터 뚜렷하고, 이건 나중에 엄청 큰 무기가 돼.</p>
+</div></div>
+
+<div class="card-strength">
+<div class="strength-num"><span style="font-size:11px;display:block;margin-bottom:2px;opacity:.6;">재능</span>03</div>
+<div class="strength-body"><div class="strength-title">수면 아래의 감각</div>
+<p>"왠지 그 사람 이상해." 네가 이렇게 말하면 한참 뒤에 진짜 뭔가가 나와. 논리로 설명 못 하는데 맞는 감이 있어. 이 직관을 믿어도 돼.</p>
+</div></div>
+
+</div>
+<div class="divider"></div>
+
+<!-- CH02 · 엄마는 어떤 사람인가 -->
+<div id="ch02">
+<p class="label" style="margin-bottom:8px;">Chapter 02</p>
+<div class="chapter-title">엄마는 어떤 사람인가</div>
+<div class="chapter-sub">엄마의 방식을 이해하기</div>
+
+<p class="body-text">엄마는 사람을 읽는 레이더가 있는 사람이야. 네가 학교에서 돌아왔을 때 현관문 여는 소리만으로 "오늘 뭔가 있었구나"를 이미 알고 있어. 이건 엄마가 널 감시하는 게 아니야 — 엄마한테는 그냥 보이는 거야. 자동으로 작동하는 거거든.</p>
+
+<p class="body-text">문제는, 엄마가 뭔가를 감지하면 그냥 놔두지 못한다는 거야. "무슨 일 있었어?" "표정이 안 좋은데?" — 엄마 입장에서는 당연한 다음 단계야. 감지했으니까 확인하는 거잖아. 근데 너한테는 "아직 정리도 안 됐는데 왜 벌써 들어와?" 하는 거지.</p>
+
+<div class="box box-fate">
+<span class="box-label">엄마를 이해하는 열쇠</span>
+<p>엄마의 레이더는 끌 수 없어. 태어날 때부터 있는 거야. 엄마가 널 읽는 건 사랑이야 — 다만 그 사랑이 "다가가서 확인하기"로 나오는 거지. 엄마가 "무슨 일 있었어?"라고 물을 때, 엄마 안에서는 "이 아이가 힘들면 내가 도와줘야 해"가 돌고 있어. 널 괴롭히려는 게 아니야.</p>
+</div>
+
+<div class="section-title">엄마의 사랑 방식</div>
+
+<p class="body-text">엄마의 사랑은 "해줌"이야. 맛있는 거 만들어주고, 필요한 거 챙겨주고, 네 환경을 더 좋게 만들어주는 것. 엄마한테 사랑 = 실질적으로 돌봐주는 거야. 그래서 엄마가 시험 기간에 간식 준비하고, 시간표 짜주고, 조용한 환경 만들어주는 거야 — 그게 엄마가 할 수 있는 최대한의 사랑 표현이거든.</p>
+
+<p class="body-text">네가 받고 싶은 사랑은 좀 달라. 너는 "함께 있는 느낌"이 사랑이잖아. 뭔가를 해주지 않아도, 엄마가 편안한 얼굴로 옆에 있는 것. 그래서 엄마가 열심히 챙길수록 네가 오히려 무거워질 수 있어 — "이만큼 해줬으니까 결과를 내야 한다"는 압박이 생기거든.</p>
+
+<div class="box box-rose">
+<span class="box-label">이건 기억해</span>
+<p>엄마가 챙기는 건 너를 부담 주려는 게 아니야. 엄마가 아는 사랑의 언어가 그거인 거야. 네가 아는 사랑의 언어는 "같이 있기"이고. 둘 다 사랑이야. 번역이 좀 다른 거지.</p>
+</div>
+
+<div class="section-title">엄마가 조용할 때</div>
+
+<p class="body-text">엄마가 조용하면 너는 "엄마가 나한테 뭔가 결론을 내리고 있다"고 느끼지? 그 느낌 이해해. 근데 실제로는, 엄마는 안에서 생각하는 중이야. 엄마의 사고방식은 겉으로 잘 안 나와 — 충분히 정리된 다음에야 입을 열거든. 엄마의 침묵 = 심판이 아니라 정리 중이야. 이걸 알면 엄마가 조용할 때 덜 불안해져.</p>
+
+<div class="section-title">엄마가 단호할 때</div>
+
+<p class="body-text">엄마가 뭔가를 딱 정해서 말하면, 내용이 맞든 틀리든 일단 밀어내고 싶어지지? 그건 네가 반항적이라서가 아니야. 엄마의 에너지가 아주 강하게 오거든 — 엄마가 생각하는 "보통 세기"가 너한테는 2배로 느껴져. 그래서 본능적으로 "밀려나지 않으려고" 버티는 거야. 엄마가 나쁜 게 아니고, 네가 나쁜 것도 아니야. 두 사람의 세기가 다른 거야.</p>
+
+</div>
+<div class="divider"></div>
+<!-- CH03 · 우리가 자꾸 부딪히는 이유 -->
+<div id="ch03">
+<p class="label" style="margin-bottom:8px;">Chapter 03</p>
+<div class="chapter-title">우리가 자꾸 부딪히는 이유</div>
+<div class="chapter-sub">누구 잘못도 아니야</div>
+
+<p class="body-text">CH01에서 네가 어떤 사람인지 봤고, CH02에서 엄마가 어떤 사람인지 봤어. 이제 이 두 사람이 만나면 왜 자꾸 같은 데서 부딪히는지 보자. 스포일러: 누구 잘못이 아니야. 방식이 다른 거야.</p>
+
+<div class="card-pattern">
+<span class="card-icon">🔄</span>
+<div class="card-title">패턴 1: "아무것도 아니야" 전쟁</div>
+<p>네가 풀이 죽어서 들어옴 → 엄마의 레이더 작동 → "무슨 일 있었어?" → 너는 아직 감정이 정리 안 됨 → "아무것도 아니야" → 엄마는 '숨기는 거다' → 더 물어봄 → 너는 벽 세움 → 엄마는 서운 → 너는 "왜 기다려주지 않는 거야"가 말로 안 나옴</p>
+</div>
+
+<div class="box box-fate">
+<span class="box-label">왜 이렇게 되는 거야</span>
+<p>엄마는 감지하면 바로 확인하는 사람이야. 너는 감정이 정리되기 전에는 말 못 하는 사람이야. 이 시간 차이가 매번 같은 패턴을 만들어. 엄마가 기다려주면 해결되는 건데, 엄마의 레이더가 기다리는 기능이 없어.</p>
+</div>
+
+<div class="card-pattern">
+<span class="card-icon">🔄</span>
+<div class="card-title">패턴 2: 사랑의 무게</div>
+<p>시험 기간 → 엄마가 간식, 시간표, 조용한 환경 전부 준비 → 너는 "이만큼 해줬으니까 결과를 내야 한다" 압박 → 시험 망하면 엄마 실망 + 내 가치 하락 이중 타격 → 시험이 네 능력이 아니라 네 존재 가치와 연결됨</p>
+</div>
+
+<div class="box box-fate">
+<span class="box-label">왜 이렇게 되는 거야</span>
+<p>엄마의 사랑은 "해줌"이야. 너의 사랑 확인은 "함께 있음"이야. 엄마가 더 많이 해줄수록 너는 더 무거워져. 엄마가 아무것도 안 하고 그냥 옆에 앉아 있으면 네가 제일 편한데, 엄마한테는 그게 "아무것도 안 해주는 것"이거든.</p>
+</div>
+
+<div class="card-pattern">
+<span class="card-icon">🔄</span>
+<div class="card-title">패턴 3: 규칙 폭발</div>
+<p>엄마가 규칙을 정함 → 이유 설명 없이 "하라니까 해" → 너는 납득 안 되지만 말 안 함 → 겉으로는 따르면서 안에서 문 닫음 → 이게 쌓임 → 어느 날 갑자기 "엄마는 맨날 혼자 정해놓고!" 폭발 → 엄마는 "갑자기 왜?" → 너는 "진작부터 그랬어"</p>
+</div>
+
+<div class="box box-fate">
+<span class="box-label">왜 이렇게 되는 거야</span>
+<p>너한테는 "공정함"이 아주 중요해. 네가 동의한 규칙은 지키는데, 일방적으로 부과된 건 소리 없이 거부해. 문제는 그 거부가 밖으로 안 나와서, 엄마 눈에는 "잘 따르고 있네"로 보인다는 거야. 쌓이다가 한계에 터지면 엄마는 진짜 놀라.</p>
+</div>
+
+<div class="box box-rose">
+<span class="box-label">이건 꼭 기억해</span>
+<p>이 패턴들은 전부 "누가 나빠서"가 아니야. 엄마도 자기 방식대로 사랑하고 있고, 너도 네 방식대로 받아들이고 있어. 다만 그 방식이 달라서 중간에 번역 오류가 생기는 거야. 번역기를 맞추면 같은 상황에서 다른 결과가 나와.</p>
+</div>
+
+</div>
+<div class="divider"></div>
+
+<!-- CH04 · 내 마음을 전달하는 방법 -->
+<div id="ch04">
+<p class="label" style="margin-bottom:8px;">Chapter 04</p>
+<div class="chapter-title">내 마음을 전달하는 방법</div>
+<div class="chapter-sub">실전 가이드</div>
+
+<div class="section-title">엄마한테 말 꺼내는 타이밍</div>
+
+<div class="box box-money">
+<span class="box-label">되는 타이밍</span>
+<p>• 차 안에서, 같이 걸을 때, 나란히 앉아 같은 방향 볼 때 — 마주 보지 않는 상태가 편해<br>• 같이 요리하거나 뭔가 만드는 중일 때 — 손이 바쁘면 입이 편해져<br>• 엄마가 자기 일 하고 있을 때 슬쩍 — "엄마 나 얘기 하나 해도 돼?"로 시작</p>
+</div>
+
+<div class="box box-warn">
+<span class="box-label">안 되는 타이밍</span>
+<p>• 엄마가 조용한 분석 모드일 때 — 이때 꺼내면 엄마도 정리 중이라 제대로 못 들어<br>• 시험 성적 나온 직후 — 둘 다 감정이 뜨거워서 번역 오류가 최대<br>• "자, 이야기해봐" 같은 정면 대화 세팅 — 심문처럼 느껴져서 입이 닫혀</p>
+</div>
+
+<div class="section-title">이렇게 말해봐</div>
+
+<div class="card-pattern">
+<span class="card-icon">💬</span>
+<div class="card-title">"아무것도 아니야" 대신</div>
+<p>"지금은 아직 잘 모르겠어. 정리되면 말할게." — 이 한 마디면 엄마의 레이더가 "기다리기 모드"로 전환돼. "아무것도 아니야"는 엄마한테 '숨기는 것'으로 들려서 더 파고들게 만들거든.</p>
+</div>
+
+<div class="card-pattern">
+<span class="card-icon">💬</span>
+<div class="card-title">"괜찮아" 대신</div>
+<p>"좀 무거운데 엄마 탓은 아니야." — 너의 "괜찮아"는 엄마가 못 믿어. 왜냐면 엄마의 레이더가 이미 "괜찮지 않다"를 읽었거든. 차라리 감정의 존재만 인정하고, 엄마 탓이 아니라는 걸 붙여주면 엄마가 안심해.</p>
+</div>
+
+<div class="card-pattern">
+<span class="card-icon">💬</span>
+<div class="card-title">규칙이 납득 안 될 때</div>
+<p>"엄마, 왜 이렇게 해야 하는지 이유를 알면 나도 지키기 쉬울 것 같아." — 반항이 아니라 이해하고 싶다는 프레임으로. 엄마는 이유를 설명하면 너가 따를 거라는 걸 아직 모를 수 있어.</p>
+</div>
+
+<div class="section-title">역효과 나는 말</div>
+
+<div class="box box-warn">
+<span class="box-label">이건 피해</span>
+<p>• "엄마는 맨날 그래" — 엄마한테는 전체를 부정하는 말로 들려. 구체적으로 "아까 그 말이 좀 무거웠어"로 바꿔<br>• 침묵으로 버티기 — 너의 침묵은 "나 화났어"가 아니라 "정리 중이야"인데, 엄마한테는 "거부"로 읽혀. 짧게라도 "지금은 좀 있다 말할게" 한마디 해줘<br>• 엄마 앞에서 한숨 쉬기 — 엄마의 레이더에 "이 아이가 힘들다" 신호로 잡혀서 즉시 개입 모드가 돼</p>
+</div>
+
+<div class="section-title">편지라는 방법</div>
+
+<p class="body-text">말로 꺼내기 어려운 이야기가 있으면, 글로 써봐. 카톡이든, 편지든, 메모장이든. 너는 말하면서 생각을 정리하는 타입이지만, 감정이 아직 형태가 안 잡혔을 때는 말보다 글이 더 정확해. "엄마 나 할 말이 있는데 말로 하면 잘 안 돼서 써봤어"로 시작하면 돼. 엄마는 글을 읽으면서 안에서 충분히 정리한 다음 대답할 수 있어 — 엄마의 사고방식에 맞는 소통이야.</p>
+
+</div>
+<div class="divider"></div>
+<!-- CH05 · 내가 바꿀 수 있는 것과 없는 것 -->
+<div id="ch05">
+<p class="label" style="margin-bottom:8px;">Chapter 05</p>
+<div class="chapter-title">내가 바꿀 수 있는 것과 없는 것</div>
+<div class="chapter-sub">기대 조정</div>
+
+<div class="section-title">엄마가 자연스럽게 주는 것</div>
+
+<p class="body-text">엄마가 의도하지 않아도 네가 받고 있는 것들이 있어.</p>
+
+<div class="box box-money">
+<span class="box-label">엄마에게서 받는 것</span>
+<p>• <strong>겉과 속이 다를 때 진짜를 읽는 눈</strong> — 엄마 옆에서 자라면서 너도 사람을 읽는 감각이 생겼어<br>• <strong>꼼꼼하게 실행하는 힘</strong> — 정리하고, 계획하고, 마무리까지 하는 것. 엄마의 실행력을 너도 흡수하고 있어<br>• <strong>사람의 진심을 느끼는 능력</strong> — 엄마가 세상을 깊이 보는 사람이라, 너도 표면 아래를 읽는 힘이 있어</p>
+</div>
+
+<div class="section-title">엄마한테 기대하기 어려운 것</div>
+
+<p class="body-text">이건 엄마가 사랑이 부족해서가 아니야. 엄마의 방식이 아닌 거야.</p>
+
+<div class="box box-warn">
+<span class="box-label">엄마의 기질상 어려운 것</span>
+<p>• <strong>알아차렸는데 모른 척하기</strong> — 엄마의 레이더는 끌 수 없어. 감지하면 행동하는 게 엄마의 기본이야<br>• <strong>아무 목적 없이 그냥 같이 있기</strong> — 엄마는 뭔가를 하고 있어야 편한 사람이야. "그냥 있기"가 엄마한테는 오히려 불안해<br>• <strong>결론 없이 들어주기</strong> — 엄마는 문제가 보이면 해결하고 싶어져. "그냥 들어줘"가 엄마한테는 아주 어려운 요청이야</p>
+</div>
+
+<div class="section-title">네가 바꿀 수 있는 것</div>
+
+<div class="card-strength">
+<div class="strength-num">01</div>
+<div class="strength-body"><div class="strength-title">"아무것도 아니야" → "정리되면 말할게"</div>
+<p>이 한 마디만 바꿔도 패턴이 깨져. 엄마의 레이더가 기다리기 모드로 전환돼.</p>
+</div></div>
+
+<div class="card-strength">
+<div class="strength-num">02</div>
+<div class="strength-body"><div class="strength-title">엄마의 챙김을 "사랑의 다른 언어"로 읽기</div>
+<p>간식 준비, 시간표 짜기 — 네가 원하는 사랑의 형태는 아닌데, 엄마가 할 수 있는 최선이야. "고마워"를 가끔 붙여주면 엄마도 보람을 느껴.</p>
+</div></div>
+
+<div class="card-strength">
+<div class="strength-num">03</div>
+<div class="strength-body"><div class="strength-title">규칙이 납득 안 되면 참지 말고 이유를 물어보기</div>
+<p>안에서 소리 없이 쌓아두면 결국 폭발해. "왜 이렇게 해야 해?"를 반항이 아니라 이해하려는 질문으로 던져봐.</p>
+</div></div>
+
+<div class="section-title">네가 바꿀 수 없는 것</div>
+
+<div class="box box-fate">
+<span class="box-label">이건 받아들이는 연습</span>
+<p>• 엄마가 너를 읽는 것 — 레이더를 끌 수 없어. 대신 "읽히는 것"과 "간섭받는 것"은 다르다고 구분해봐<br>• 엄마의 말이 세게 느껴지는 것 — 엄마의 "보통 세기"가 너한테 2배로 오는 건 두 사람의 에너지 배치 때문이야. 엄마가 일부러 세게 하는 게 아니야<br>• 집의 온도가 엄마 기분에 연결되는 것 — 이건 네가 이 집에서 자라면서 생긴 구조야. 나중에 독립하면 자연스럽게 약해져</p>
+</div>
+
+</div>
+<div class="divider"></div>
+
+<!-- CH06 · 이 관계가 나에게 주는 것 -->
+<div id="ch06">
+<p class="label" style="margin-bottom:8px;">Chapter 06</p>
+<div class="chapter-title">이 관계가 나에게 주는 것</div>
+<div class="chapter-sub">지금은 힘들어도</div>
+
+<p class="body-text">지금 엄마랑 부딪히는 것들이 나중에 너를 만들어. 좀 이상하게 들리겠지만, 진짜야.</p>
+
+<div class="section-title">엄마 때문에 생긴 너의 힘</div>
+
+<div class="box box-money">
+<span class="box-label">이미 갖고 있는 것</span>
+<p>• <strong>분위기를 읽는 능력</strong> — 집의 온도를 항상 감지하면서 자란 너는, 어떤 방에 들어가도 그 방의 분위기를 즉시 파악해. 이건 나중에 사회생활에서 엄청난 강점이 돼<br>• <strong>상대의 말 뒤에 있는 진짜를 읽는 능력</strong> — 엄마의 침묵을 해석하면서 자란 너는, 사람들이 말하지 않는 것을 읽는 감각이 생겼어<br>• <strong>꼼꼼하게 마무리하는 실행력</strong> — 엄마의 체계적인 방식을 자연스럽게 흡수했어. 이건 네가 뭘 하든 따라다니는 자산이야</p>
+</div>
+
+<div class="section-title">앞으로 이 관계가 어떻게 변하는지</div>
+
+<p class="body-text">지금이 가장 부딪히는 시기야. 너는 "나는 누구인가"를 찾고 있고, 엄마는 너를 지키려고 하고 있어. 이 두 방향이 충돌하는 건 당연해. 근데 이게 영원하지 않아.</p>
+
+<div class="card-pattern">
+<span class="card-icon">→</span>
+<div class="card-title">고등학생 · 자기 기준이 생기는 시기</div>
+<p>네 취향과 가치관이 더 뚜렷해져. 엄마랑 의견이 다를 때 예전처럼 참지 않고 자기 입장을 세우게 돼. 이건 반항이 아니야 — 독립이야.</p>
+</div>
+
+<div class="card-pattern">
+<span class="card-icon">→</span>
+<div class="card-title">20대 초반 · 떨어져서 가까워지는 시기</div>
+<p>집을 떠나면 엄마의 에너지가 너를 직접 누르는 구조가 약해져. 전화로 안부를 주고받을 때, 처음으로 "엄마랑 이야기하는 게 편하다"를 느낄 수 있어.</p>
+</div>
+
+<div class="card-pattern">
+<span class="card-icon">→</span>
+<div class="card-title">20대 중후반 · 감사가 시작되는 시기</div>
+<p>사회에서 부딪히면서 엄마에게서 받은 것들의 가치를 알아가게 돼. 네가 먼저 엄마한테 조언을 구하기 시작해. 이때 엄마의 분석력이 간섭이 아니라 자원이 돼.</p>
+</div>
+
+<div class="box box-rose">
+<span class="box-label">언젠가 너는 이렇게 느낄 거야</span>
+<p>"엄마가 나를 읽는 게 무서웠는데, 이제는 나를 가장 잘 아는 사람이 있다는 게 안심이 된다."<br><br>지금은 그 날이 멀어 보이겠지만, 이 리포트를 읽고 있는 지금이 그 날로 가는 첫 번째 걸음이야.</p>
+</div>
+
+<div class="section-title">너에게</div>
+
+<p class="body-text">네가 느끼는 것들은 전부 진짜야. "왜 나만 이렇게 예민하지?" 생각 안 해도 돼. 네가 예민한 게 아니라, 너의 감각이 넓은 거야. 그 감각 덕분에 너는 다른 사람이 못 보는 것을 보고, 못 느끼는 것을 느끼고, 아무도 모르게 힘든 사람 옆에 앉아줄 수 있는 거야.</p>
+
+<p class="body-text">엄마와의 이 관계는 네가 선택한 게 아니지만, 이 관계가 너에게 주는 것은 너의 것이야. 분위기를 읽는 힘, 진짜를 가려내는 눈, 아름다운 것을 알아보는 감각 — 전부 이 관계 안에서 자란 거야.</p>
+
+<div class="box box-fate">
+<span class="box-label">마지막으로</span>
+<p>엄마를 바꾸려고 하지 않아도 돼. 너를 바꾸려고 하지 않아도 돼. 다만 둘 사이의 번역기를 조금씩 맞춰가면, 같은 일이 일어나도 다르게 느낄 수 있어. 이 리포트가 그 번역기의 첫 페이지야.</p>
+</div>
+
+</div>
+<div class="divider"></div>
+
+<!-- CLOSING -->
+<div class="closing-box">
+<p>너는 엄마의 사랑을 알고 있어. 다만 그 사랑이 가끔 무겁게 느껴질 뿐이야.</p>
+<p>엄마도 너의 마음을 읽고 있어. 다만 읽은 다음에 어떻게 할지가 좀 서툴 뿐이야.</p>
+<p>두 사람 다 서투른 거야. 그리고 서투른 건 고칠 수 있어.</p>
+<p class="end-mark">괜찮아, 천천히 가면 돼. ✦</p>
+</div>
+
+<p class="muted" style="text-align:center;font-size:11px;letter-spacing:4px;margin-top:48px;margin-bottom:60px;">NODE 8 ATLAS LABS · 별빛 리포트</p>
+<p class="muted" style="text-align:center;font-size:10px;letter-spacing:2px;margin-bottom:80px;">김은서 · FOR ME · 2026년 4월</p>
+
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(function(a){
+  a.addEventListener('click',function(e){
+    e.preventDefault();
+    var t=document.getElementById(this.getAttribute('href').substring(1));
+    if(t)t.scrollIntoView({behavior:'smooth',block:'start'});
+  });
+});
+</script>
